@@ -5,14 +5,14 @@ Signora B..blush?
 </p>
 
 ## General Instructions
-After cloning the repo first create a python enviroment. For that follow the following steps:
-```python -m venv <virtual_env_name>```
-This should create a folder with the corresponding name. Then activate the python environment using the following command.
-```<virtual_env_name>\Scripts\activate.bat```(only works for Windows)
-After this you can easily set up the python pakages using `pip`.
-```python -m pip install -r requirements.txt```
-Note that if you install/update any new requirements use the ` pip freeze > requirements.txt` command to update the requuirements file.
-If you want to code a new feature for this bot, create a cog or modify existing cog and add uniersal functions in utils. Finally add the cog to the main file.
+After cloning the repo first create a python enviroment. For that follow the following steps:<br/>
+```python -m venv <virtual_env_name>```<br/>
+This should create a folder with the corresponding name. Then activate the python environment using the following command.<br/>
+```<virtual_env_name>\Scripts\activate.bat```(only works for Windows)<br/>
+After this you can easily set up the python pakages using `pip`.<br/>
+```python -m pip install -r requirements.txt```<br/>
+Note that if you install/update any new requirements use the ` pip freeze > requirements.txt` command to update the requuirements file.<br/>
+If you want to code a new feature for this bot, create a cog or modify existing cog and add uniersal functions in utils. Finally add the cog to the main file.<br/>
 Note: In `discord.py` overriding the default provided `on_message` forbids any extra commands from running. To fix this, add a bot.process_commands(message) line at the end of your `on_message`. I would recommend not to use this as commands can satisfy most of your needs
 
 ## How it works
