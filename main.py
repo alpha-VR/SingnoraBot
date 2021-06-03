@@ -12,7 +12,14 @@ if BOT_TOKEN == None:
     with open('./BOT_TOKEN.token','r') as token:
         BOT_TOKEN = token.read()
 
-bot = commands.Bot(command_prefix = "$")
+bot = commands.Bot(command_prefix = commands.when_mentioned_or("$"))
+
+@bot.event
+async def on_ready():
+    print('Logged in as')
+    print(bot.user.name)
+    print(bot.user.id)
+    print('------')
 
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py') and filename != '__init__.py':

@@ -1,16 +1,20 @@
 import discord
-form discord import commands
+from discord.ext import commands
 import random
 import sys
 import os
 
 class Basic(commands.Cog):
     def __init__(self,bot):
-        sellf.bot = bot
+        self.bot = bot
     
     @commands.command()
     async def ping(self, ctx):
-        await ctx.send('Pong')
+        await ctx.send(f'Bot ping is: {round(self.bot.latency,3)*1000} ms')
+    
+    @commands.command()
+    async def signora(self,ctx):
+        await ctx.send('Signora will come home',file = discord.File('./data/images/signora.png'))
 
 def setup(bot):
     bot.add_cog(Basic(bot))
