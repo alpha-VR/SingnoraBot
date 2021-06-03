@@ -5,24 +5,34 @@ import sys
 import random
 from dotenv import load_dotenv
 
-load_dotenv()
+def main():
+    load_dotenv()
 
-BOT_TOKEN = os.getenv('BOT_TOKEN')
-if BOT_TOKEN == None:
-    with open('./BOT_TOKEN.token','r') as token:
-        BOT_TOKEN = token.read()
+    BOT_TOKEN = os.getenv('BOT_TOKEN')
+    if BOT_TOKEN == None:
+        with open('./BOT_TOKEN.token','r') as token:
+            BOT_TOKEN = token.read()
 
-bot = commands.Bot(command_prefix = commands.when_mentioned_or("$"))
+    bot = commands.Bot(command_prefix = commands.when_mentioned_or("$"))
 
-@bot.event
-async def on_ready():
-    print('Logged in as')
-    print(bot.user.name)
-    print(bot.user.id)
-    print('------')
+    @bot.event
+    async def on_ready():
+        print('Logged in as')
+        print(bot.user.name)
+        print(bot.user.id)
+        print('------')
 
-for filename in os.listdir('./cogs'):
-    if filename.endswith('.py') and filename != '__init__.py':
-        bot.load_extension(f'cogs.{filename[:-3]}')
+    for filename in os.listdir('./cogs'):
+        if filename.endswith('.py') and filename != '__init__.py':
+            bot.load_extension(f'cogs.{filename[:-3]}')
+    
+    # @discord_common.on_ready_event_once(bot)
+    # async def init():
+    #     clist_api.cache()
+    #     asyncio.create_task(discord_common.presence(bot))
 
-bot.run(BOT_TOKEN)
+    # bot.add_listener(discord_common.bot_error_handler, name='on_command_error')
+    bot.run(BOT_TOKEN)
+
+if __name__ == '__main__':
+    main()
