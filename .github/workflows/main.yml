@@ -45,6 +45,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          pip install requirements.txt
+          python -m pip install -r requirements.txt
           python main.py
 
