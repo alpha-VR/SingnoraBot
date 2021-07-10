@@ -1,4 +1,4 @@
-#from utils import rater as ra
+from utils import rater as ra
 import translations as tr
 import discord
 from discord.ext import commands
