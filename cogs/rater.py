@@ -84,7 +84,7 @@ class Rater(commands.Cog):
         embed.set_author(name=ctx.message.author.display_name, icon_url=ctx.message.author.avatar_url)
         embed.add_field(name=f'{lang.art_level}: {level}', value=msg)
 
-        await ctx.send(ctx, embed=embed)
+        await ctx.send(embed=embed)
 
     
 def setup(bot):
