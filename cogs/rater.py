@@ -15,14 +15,14 @@ class Rater(commands.Cog):
         self.bot = bot
     #ctx.send
     
-    @commands.command()
-    async def url(self, ctx):
+    @commands.command(brief="not sure what to do with this, does nothing. USELESS")
+    async def amber(self, ctx):
         attachment = ctx.message.attachments[0]
         await ctx.send(attachment.url)
 
 
 
-    @commands.command()
+    @commands.command(brief="artifact rater")
     async def rate(self, ctx):
         print(ctx.message.attachments[0])
         url = None
