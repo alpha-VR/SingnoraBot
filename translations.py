@@ -46,7 +46,7 @@ class translation:
 		self.main_score = 'Main Stat Rating'
 		self.sub_score = 'Substat Rating'
 		self.art_level = 'Artifact Level'
-		self.join = f'For issues, join the [Artifact Rater Server]({self.SERVER_URL})'
+		self.join = f'For issues, join the [Genshin Impact @ BPHC Server]({self.SERVER_URL})'
 		self.feedback = f'Feedback received, please join {self.SERVER_URL} if you\'d like to add more details'
 		self.deprecated = 'Deprecated, please use the `-user lang <lang>` command to set your language'
 		self.set_lang = 'Language set to English'

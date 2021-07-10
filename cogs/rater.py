@@ -16,10 +16,24 @@ class Rater(commands.Cog):
     #ctx.send
     
     @commands.command()
+    async def url(self, ctx):
+        attachment = ctx.message.attachments[0]
+        await ctx.send(attachment.url)
+
+
+
+    @commands.command()
     async def rate(self, ctx):
+        print(ctx.message.attachments[0])
         url = None
         if ctx.message.attachments:
+            print('hi')
+            print(ctx.message.attachments[0].url)
             url = ctx.message.attachments[0].url
+            # print(url)
+        else:
+            await ctx.send('Bot not working')
+            # return
         msg = ctx.message.content.split()[1:]
         options = []
         for word in msg:
@@ -42,8 +56,8 @@ class Rater(commands.Cog):
             return
         
         lang = tr.en()
-        print(ra.ocr(url,2,lang))
-        suc, text = ra.ocr(url, 2, lang)
+        print(await ra.ocr(url,2,lang))
+        suc, text = await ra.ocr(url, 2, lang)
         print(text)
         if suc:
             level, results = ra.parse(text, lang)
@@ -52,7 +66,7 @@ class Rater(commands.Cog):
             score, main_score, main_weight, sub_score, sub_weight = ra.rate(level, results, {}, lang)
         
         if not results:
-            await send(ctx, msg=lang.err_unknown)
+            await ctx.send(ctx, msg=lang.err_unknown)
             return
 
         if score <= 50:
@@ -74,7 +88,7 @@ class Rater(commands.Cog):
         embed.set_author(name=ctx.message.author.display_name, icon_url=ctx.message.author.avatar_url)
         embed.add_field(name=f'{lang.art_level}: {level}', value=msg)
 
-        await send(ctx, embed=embed)
+        await ctx.send(ctx, embed=embed)
 
     
 def setup(bot):
