@@ -65,24 +65,24 @@ class Rater(commands.Cog):
             await ctx.send(ctx, msg=lang.err_unknown)
             return
 
-#         if score <= 50:
-#             color = discord.Color.blue()
-#         elif score > 50 and score <= 75:
-#             color = discord.Color.purple()
-#         else:
-#             color = discord.Color.orange()
+        if score <= 50:
+            color = discord.Color.blue()
+        elif score > 50 and score <= 75:
+            color = discord.Color.purple()
+        else:
+            color = discord.Color.orange()
 
-#         msg = f'\n\n**{results[0][0]}: {results[0][1]}**'
-#         for result in results[1:]:
-#             msg += f'\n{result[0]}: {result[1]}'
-#         msg += f'\n\n**{lang.score}: {int(score * (main_weight + sub_weight))} ({score:.2f}%)**'
-#         msg += f'\n{lang.main_score}: {int(main_score * main_weight)} ({main_score:.2f}%)'
-#         msg += f'\n{lang.sub_score}: {int(sub_score * sub_weight)} ({sub_score:.2f}%)'
-#         msg += f'\n\n{lang.join}'
+        msg = f'\n\n**{results[0][0]}: {results[0][1]}**'
+        for result in results[1:]:
+            msg += f'\n{result[0]}: {result[1]}'
+        msg += f'\n\n**{lang.score}: {int(score * (main_weight + sub_weight))} ({score:.2f}%)**'
+        msg += f'\n{lang.main_score}: {int(main_score * main_weight)} ({main_score:.2f}%)'
+        msg += f'\n{lang.sub_score}: {int(sub_score * sub_weight)} ({sub_score:.2f}%)'
+        msg += f'\n\n{lang.join}'
 
         embed = discord.Embed(color=discord.Color.orange())
         embed.set_author(name=ctx.message.author.display_name, icon_url=ctx.message.author.avatar_url)
-#         embed.add_field(name=f'{lang.art_level}: {level}', value=msg)
+        embed.add_field(name=f'{lang.art_level}: {level}', value=msg)
 
         await ctx.send(ctx, embed=embed)
 
