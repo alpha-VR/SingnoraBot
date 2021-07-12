@@ -183,9 +183,9 @@ def rate(level, results, options={}, lang=tr.en()):
 				 f'{lang.hp}%': 46.6, f'{lang.df}%': 58.3, f'{lang.heal}%': 35.9}
 	max_subs = {lang.atk: 19.0, lang.em: 23.0, f'{lang.er}%': 6.5, f'{lang.atk}%': 5.8,
 				f'{lang.cr}%': 3.9, f'{lang.cd}%': 7.8, lang.df: 23.0, lang.hp: 299.0, f'{lang.df}%': 7.3, f'{lang.hp}%': 5.8}
-	weights = {lang.hp: 0, lang.atk: 0.5, f'{lang.atk}%': 1, f'{lang.er}%': 0.5, lang.em: 0.5,
+	weights = {lang.hp: 0.1, lang.atk: 0.25, f'{lang.atk}%': 0.5, f'{lang.er}%': 0.6, lang.em: 0.75,
 			   f'{lang.phys}%': 1, f'{lang.cr}%': 1, f'{lang.cd}%': 1, f'{lang.elem}%': 1,
-			   f'{lang.hp}%': 0, f'{lang.df}%': 0, lang.df: 0, f'{lang.heal}%': 0}
+			   f'{lang.hp}%': 0.2, f'{lang.df}%': 0.1, lang.df: 0.1, f'{lang.heal}%': 0}
 
 	# Replaces weights with options
 	weights = {**weights, **options}
