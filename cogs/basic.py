@@ -20,8 +20,11 @@ class Basic(commands.Cog):
     @commands.command(brief="yes yes yes")
     async def kickme(self,ctx):   
         await ctx.send(f'Signora kicked {ctx.message.author.mention}',file=discord.File('./data/gif/kick.gif'))
+
+    @commands.command(brief="mihoyo is trapping and you know it, and still fall for it")
+    async def boobasword(self,ctx):   
+        await ctx.send(f'{ctx.message.author.mention} get booba sword',file=discord.File('./data/gif/booba.gif'))
     
-    @commands.command(brief="seriously something is wrong with you")
     async def roastme(self,ctx):
         f = open('./data/roasts.json')
         data = json.load(f)
