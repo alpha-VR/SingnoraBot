@@ -10,7 +10,7 @@ def main():
 
     BOT_TOKEN = os.getenv('BOT_TOKEN')
     if BOT_TOKEN == None:
-        with open('./BOT_TOKEN.token','r') as token:
+        with open('./token/BOT_TOKEN.token','r') as token:
             BOT_TOKEN = token.read()
 
     intents = discord.Intents().all()
