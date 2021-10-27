@@ -16,7 +16,7 @@ class Roles(commands.Cog):
         member = ctx.message.author
         if len(args) == 1:
             role_name = args[0]
-            if role_name == 'Mod':
+            if role_name == 'Mod' and "avada" not in member.name.lower() and "plum" not in member.name.lower():
                 await ctx.send('Ask admin')
             else:
                 role = None
