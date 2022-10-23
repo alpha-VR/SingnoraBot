@@ -19,7 +19,7 @@ class Roles(commands.Cog):
         for i in range(len(args)):
             role_name += args[i]+' '
         role_name = role_name[:-1]
-        if role_name == 'Mod' and "avada" not in member.name.lower() and "plum" not in member.name.lower():
+        if role_name == 'Mod' and "plum" not in member.name.lower():
             await ctx.send('Ask admin')
         else:
             role = None
