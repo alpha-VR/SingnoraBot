@@ -16,7 +16,7 @@ fuzzywuzzy==0.18.0
 idna==3.4
 multidict==6.0.4
 numpy>=1.26.0
-opencv-python==4.6.0.66
+opencv-python>=4.8.0
 pandas==1.5.2
 Pillow==8.3.2
 python-dateutil==2.8.1
