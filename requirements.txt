@@ -15,7 +15,7 @@ discord.py==1.7.2
 fuzzywuzzy==0.18.0
 idna==3.4
 multidict==6.0.4
-numpy==1.24.1
+numpy>=1.26.0
 opencv-python==4.6.0.66
 pandas==1.5.2
 Pillow==8.3.2
